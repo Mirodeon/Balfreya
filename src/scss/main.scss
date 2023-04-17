@@ -6,3 +6,35 @@
     background: radial-gradient(grey, black);
     min-height: 100vh;
 }
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+button {
+    background: initial;
+    font-family: 'XoloniumRegular';
+    border: none;
+}
+
+input {
+    font-family: inherit;
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+
+    &:-webkit-autofill::first-line,
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        font-family: inherit;
+        background: transparent;
+    }
+}
