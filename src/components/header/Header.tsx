@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { RootState } from "../../store";
 /*import locationNav from "../../utils/locationNav";*/
 import { Responsive } from "../../utils/useResponsive";
-import NavBtn from "./NavBtn";
 import NavItem from "./NavItem";
 
 type HeaderProps = {
@@ -13,43 +12,20 @@ type HeaderProps = {
 
 const Header = ({ responsive }: HeaderProps) => {
   const account = useSelector((state: RootState) => state.auth.account);
+  const btns = NavItem(responsive);
   /* const location = useLocation();
   const path = location.pathname;
   useEffect(() => {
     locationNav(path);
   }, [path]);*/
-  type BtnProps = {
-    path: string;
-    className: string;
-    name: string;
-    icone: JSX.Element;
-  };
-
-  const getBtns = (btns: BtnProps[]) => {
-    const result: JSX.Element[] = [];
-    btns.forEach((btn) =>
-      result.push(
-        <NavBtn
-          path={btn.path}
-          className={btn.className}
-          content={responsive.width ? btn.name : btn.icone}
-          key={btn.name}
-        />
-      )
-    );
-    return result;
-  };
-
-  const leftBtns = getBtns(NavItem.leftNavBar);
-  const rightAuthBtns = getBtns(NavItem.rightNavBar.auth);
-  const rightNotAuthBtns = getBtns(NavItem.rightNavBar.notAuth);
 
   return (
-    <header>
+    <header className="main_header">
       <nav className="header_nav">
-        <div className="left_header_nav">{leftBtns}</div>
+        <div className="left_header_nav">{btns.left}</div>
+        <h1 className="title_header">BALFREYA</h1>
         <div className="right_header_nav">
-          {account ? <>{rightAuthBtns}</> : <>{rightNotAuthBtns}</>}
+          {account ? <>{btns.rightAuth}</> : <>{btns.rightNotAuth}</>}
         </div>
       </nav>
     </header>

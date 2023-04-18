@@ -1,0 +1,55 @@
+.main_header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 0px 5px cyan);
+    box-sizing: border-box;
+    z-index: 100;
+
+    .header_nav {
+        display: flex;
+        max-width: 1280px;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+        height: 56px;
+        box-sizing: border-box;
+
+        .left_header_nav {
+            margin-left: 25px;
+        }
+
+        .right_header_nav {
+            margin-right: 25px;
+        }
+
+        .left_header_nav,
+        .right_header_nav {
+            display: flex;
+            gap: 50px;
+
+            @include break768px {
+                gap: calc(16px + 1.5rem);
+
+                .nav_btn {
+                    min-width: calc(16px + 1rem);
+                }
+            }
+
+
+        }
+
+        .title_header {
+            font-size: 1.5rem;
+            color: cyan;
+            text-shadow: 0 0 5px cyan;
+            text-align: center;
+
+            @include break768px {
+                display: none;
+            }
+        }
+    }
+}

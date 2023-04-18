@@ -1,5 +1,8 @@
 @import "reset.css";
 @import url('https://fontlibrary.org//face/xolonium');
+@import "./partials/responsiveMixins";
+@import "./partials/navBtn";
+@import "./header/header";
 
 #root {
     font-family: 'XoloniumRegular';

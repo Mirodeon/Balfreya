@@ -26,7 +26,7 @@ const useResponsive = (): Responsive => {
   }, []);
 
   return {
-    width: width > 800,
+    width: width > 768,
     height: height > 600,
   };
 };
