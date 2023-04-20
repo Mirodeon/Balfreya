@@ -5,6 +5,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import useResponsive from "./utils/useResponsive";
 import Header from "./components/header/Header";
+import SvgToJSON from "./pages/SvgToJSON";
 
 function App() {
   const responsive = useResponsive();
@@ -15,6 +16,7 @@ function App() {
         <Router>
           <Header responsive={responsive} />
           <Routes>
+            <Route path="/svgtojson" element={<SvgToJSON />} />
             <Route path="*" element={<Test />} />
           </Routes>
         </Router>
