@@ -1,5 +1,4 @@
 .container_converter_svg {
-    max-width: 1280px;
     min-height: 100vh;
     box-sizing: border-box;
     display: flex;
@@ -9,6 +8,7 @@
 
     .form_converter_svg {
         width: 50%;
+        max-width: 640px;
         display: flex;
         flex-direction: column;
         align-items: center;
