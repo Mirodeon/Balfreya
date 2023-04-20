@@ -1,0 +1,18 @@
+{
+  "navBtn": [
+    {
+      "path": "/",
+      "className": "home_nav",
+      "name": "Home",
+      "icone": "",
+      "pos": "left"
+    },
+    {
+      "path": "/",
+      "className": "home_nav",
+      "name": "Home",
+      "icone": "",
+      "pos": "left"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+.container_converter_svg {
+    max-width: 1280px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .form_converter_svg {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        margin-top: 50px;
+
+        .input_svg {
+            width: 100%;
+        }
+
+        /*.nav_btn {}*/
+
+        .result_svg {
+            width: 100%;
+            min-height: 160px;
+            box-sizing: border-box;
+        }
+    }
+}
