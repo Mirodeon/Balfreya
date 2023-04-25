@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { Responsive } from "../../utils/useResponsive";
 import NavBtn from "./NavBtn";
+import data from "./nav.json";
 
 const NavItem = (responsive: Responsive) => {
   const items: { [key: string]: JSX.Element[] } = {
@@ -7,6 +9,10 @@ const NavItem = (responsive: Responsive) => {
     rightAuth: [],
     rightNotAuth: [],
   };
+
+  useEffect(() => {
+    data.map(data => console.log(data));// eslint-disable-next-line
+  }, []);
 
   const createNavItem = (
     path: string,
@@ -23,8 +29,9 @@ const NavItem = (responsive: Responsive) => {
         key={name}
       />
     );
+    console.log("hey");
   };
-
+  console.log("pouet");
   createNavItem(
     "/",
     "home_nav",
