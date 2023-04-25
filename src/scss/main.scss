@@ -7,7 +7,7 @@
 
 #root {
     font-family: 'XoloniumRegular';
-    background: radial-gradient(grey, black);
+    /*background: radial-gradient(grey, black);*/
     min-height: 100vh;
 }
 
@@ -16,7 +16,8 @@ a {
 }
 
 body {
-    background: rgba(0, 0, 0, 0.7);
+    background: radial-gradient(grey, black);
+    background-attachment:fixed;
 }
 
 button {
