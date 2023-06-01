@@ -1,4 +1,4 @@
-interface INode {
+export interface INode {
     name: string;
     type: string;
     value: string;
