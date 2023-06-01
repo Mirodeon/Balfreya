@@ -1,18 +1,17 @@
-import { useEffect } from "react";
+
 import { Responsive } from "../../utils/useResponsive";
+import SvgFromJson from "../utils/SvgFromJson";
 import NavBtn from "./NavBtn";
 import data from "./nav.json";
 
+export interface NavItems { [key: string]: JSX.Element[] }
+
 const NavItem = (responsive: Responsive) => {
-  const items: { [key: string]: JSX.Element[] } = {
+  const items: NavItems = {
     left: [],
     rightAuth: [],
     rightNotAuth: [],
   };
-
-  useEffect(() => {
-    data.map(data => console.log(data));// eslint-disable-next-line
-  }, []);
 
   const createNavItem = (
     path: string,
@@ -31,8 +30,12 @@ const NavItem = (responsive: Responsive) => {
     );
     console.log("hey");
   };
+
+  data.map(data => console.log(data));
+  data.map(data => createNavItem(data.path, data.className, data.name, SvgFromJson(data.icone), data.pos));
+
   console.log("pouet");
-  createNavItem(
+  /* createNavItem(
     "/",
     "home_nav",
     "Home",
@@ -156,7 +159,7 @@ const NavItem = (responsive: Responsive) => {
       </svg>
     </>,
     "rightNotAuth"
-  );
+  ); */
 
   return items;
 };
