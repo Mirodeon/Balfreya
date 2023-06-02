@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { parse } from "svgson";
 
 const SvgToJSON = () => {
-  document.title = "Convert svg to JSON";
+  document.title = "Balfreya - Convert SVG to JSON";
   const [loading, setLoading] = useState(false);
   const [svgParsed, setSvgParsed] = useState("");
   const [message, setMessage] = useState("");
