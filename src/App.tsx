@@ -15,7 +15,7 @@ function App() {
         <Router>
           <Header responsive={responsive} />
           <Routes>
-            <Route path="/login" element={<SvgToJSON />} />
+            <Route path="/login" element={<Register />} />
             <Route path="/register" element={<Register />} />
             <Route path="/svgtojson" element={<SvgToJSON />} />
             <Route path="*" element={<Test />} />
