@@ -4,7 +4,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import useResponsive from "./utils/useResponsive";
 import Header from "./components/header/Header";
-import { Register, SvgToJSON } from "./pages";
+import { SvgToJSON } from "./pages";
+import UserHub from "./components/profile/Userhub";
 
 function App() {
   const responsive = useResponsive();
@@ -15,9 +16,11 @@ function App() {
         <Router>
           <Header responsive={responsive} />
           <Routes>
-            <Route path="/login" element={<Register />} />
-            <Route path="/register" element={<Register />} />
+            {/* <Route path="/login" element={<Register />} />
+            <Route path="/register" element={<Register />} /> */}
+            <Route path="/user" element={<UserHub />} />
             <Route path="/svgtojson" element={<SvgToJSON />} />
+            <Route path="/" element={<Test />} />
             <Route path="*" element={<Test />} />
           </Routes>
         </Router>
