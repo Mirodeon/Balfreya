@@ -127,7 +127,7 @@
     "pos": "rightAuth"
   },
   {
-    "path": "/login",
+    "path": "/user/login",
     "className": "login_nav",
     "name": "Login",
     "icone": {
@@ -167,7 +167,7 @@
     "pos": "rightNotAuth"
   },
   {
-    "path": "/register",
+    "path": "/user/register",
     "className": "register_nav",
     "name": "Register",
     "icone": {

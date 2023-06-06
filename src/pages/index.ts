@@ -1,4 +1,4 @@
-import Register from "./Register";
 import SvgToJSON from "./SvgToJSON";
+import UserHub from "./Userhub";
 
-export { Register, SvgToJSON };
+export { SvgToJSON, UserHub };

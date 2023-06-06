@@ -9,7 +9,7 @@ type PrivateRouteProps = {
     path?: string;
 }
 
-export const PrivateRoute = ({ element, auth, notAuth }: PrivateRouteProps) => {
+const PrivateRoute = ({ element, auth, notAuth }: PrivateRouteProps) => {
     const account = useSelector((state: RootState) => state.auth.account);
     const allAccess = auth && notAuth;
     const userAccess = auth && !notAuth && account;
@@ -18,6 +18,8 @@ export const PrivateRoute = ({ element, auth, notAuth }: PrivateRouteProps) => {
     if (allAccess || userAccess || nonUsersAccess) {
         return element;
     } else {
-        return <Navigate to={!auth ? "/profile" : "/login"} />;
+        return <Navigate to={!auth ? "/user/profile" : "/user/login"} />;
     }
 }
+
+export default PrivateRoute;
