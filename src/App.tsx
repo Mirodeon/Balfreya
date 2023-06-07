@@ -5,10 +5,10 @@ import { Provider } from "react-redux";
 import useResponsive from "./utils/useResponsive";
 import Header from "./components/header/Header";
 import { SvgToJSON, UserHub } from "./pages";
+import Logout from "./pages/Logout";
 
 function App() {
   const responsive = useResponsive();
-
 
   return (
     <Provider store={store}>
@@ -17,6 +17,7 @@ function App() {
           <Header responsive={responsive} />
           <Routes>
             <Route path="/user/*" element={<UserHub />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/svgtojson" element={<SvgToJSON />} />
             <Route path="/" element={<Test />} />
             <Route path="*" element={<Test />} />
