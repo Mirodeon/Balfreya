@@ -6,6 +6,7 @@ import useResponsive from "./utils/useResponsive";
 import Header from "./components/header/Header";
 import { SvgToJSON, UserHub } from "./pages";
 import Logout from "./pages/Logout";
+import Slide from "./pages/Slide";
 
 function App() {
   const responsive = useResponsive();
@@ -19,7 +20,7 @@ function App() {
             <Route path="/user/*" element={<UserHub />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/svgtojson" element={<SvgToJSON />} />
-            <Route path="/" element={<Test />} />
+            <Route path="/" element={<Slide />} />
             <Route path="*" element={<Test />} />
           </Routes>
         </Router>
