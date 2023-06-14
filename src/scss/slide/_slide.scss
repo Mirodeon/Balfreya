@@ -17,8 +17,7 @@
         position: relative;
         width: 100%;
         height: 80%;
-        /*background: rgba(0, 0, 0, 1);*/
-        background: radial-gradient(rgba(0, 255, 255, 0.5), black 30%);
+        background: radial-gradient(rgba(0, 0, 0, 0.5), black 100%);
         border-radius: 35px;
         box-sizing: border-box;
         overflow: hidden;
@@ -44,11 +43,17 @@
             &.next {
                 transform: translate(50%, -50%);
             }
-            &.move_prev{
-                animation: 0.7s ease-out 0s 1 moveToRight;
+
+            &.move_prev {
+                animation: 0.75s ease-out 0s 1 moveToRight;
             }
-            &.move_next{
-                animation: 0.7s ease-out 0s 1 moveToLeft;
+
+            &.move_next {
+                animation: 0.75s ease-out 0s 1 moveToLeft;
+            }
+
+            &.not_display {
+                display: none;
             }
 
             .img_slide {
@@ -72,12 +77,12 @@
 
 @keyframes moveToRight {
     to {
-        left:150%;
+        left: 150%;
     }
 }
 
 @keyframes moveToLeft {
     to {
-        left:-50%;
+        left: -50%;
     }
 }
