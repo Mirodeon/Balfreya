@@ -7,6 +7,8 @@ import Header from "./components/header/Header";
 import { SvgToJSON, UserHub } from "./pages";
 import Logout from "./pages/Logout";
 import Slide from "./pages/Slide";
+import { data as dataImg } from "./img";
+import Factory from "./components/factory/Factory";
 
 function App() {
   const responsive = useResponsive();
@@ -15,13 +17,23 @@ function App() {
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
         <Router>
-          <Header responsive={responsive} />
+          <Header responsive={responsive} main={true} />
           <Routes>
             <Route path="/user/*" element={<UserHub />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/svgtojson" element={<SvgToJSON />} />
-            <Route path="/" element={<Slide />} />
-            <Route path="*" element={<Test />} />
+            <Route
+              path="/"
+              element={
+                <Slide
+                  data={dataImg}
+                  width={"80%"}
+                  slideHeight={"calc(70vh - 112px)"}
+                  cssStyle="margin-top: 112px;"
+                />
+              }
+            />
+            <Route path="*" element={<Factory />} />
           </Routes>
         </Router>
       </PersistGate>

@@ -1,0 +1,24 @@
+:root {
+    --primary-origin: cyan;
+    --primary: cyan;
+    --primary-light-origin: rgba(0, 255, 255, 0.5);
+    --primary-light: rgba(0, 255, 255, 0.5);
+    --secondary-origin: black;
+    --secondary: black;
+    --secondary-light-origin: rgba(0, 0, 0, 0.5);
+    --secondary-light: rgba(0, 0, 0, 0.5);
+    --teriary-origin: grey;
+    --tertiary: grey;
+    --tertiary-light-origin: rgba(128, 128, 128, 0.5);
+    --tertiary-light: rgba(128, 128, 128, 0.5);
+    --opacity-origin: rgba(0, 0, 0, 0.5);
+    --opacity: rgba(0, 0, 0, 0.5);
+    --error-origin: rgba(0, 255, 255, 0.5);
+    --error: rgba(0, 255, 255, 0.5);
+    --pending-origin: rgb(255, 130, 0);
+    --pending: rgb(255, 130, 0);
+    --failed-origin: rgb(255, 0, 0);
+    --failed: rgb(255, 0, 0);
+    --success-origin: rgb(0, 255, 0);
+    --success: rgb(0, 255, 0);
+}

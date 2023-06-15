@@ -1,14 +1,11 @@
 import { useState } from "react";
-import Status from "../components/profile/Status";
-import Cube from "../components/profile/Cube";
 import useTimeOut from "../utils/useTimeOut";
 import useHealthCheck from "../utils/usehealthCheck";
 import useByPath from "../utils/useByPath";
 import { AuthRoutes } from "../routes";
-import { LoginForm, RegisterForm } from "../components/auth";
+import { Cube, LoginForm, RegisterForm, Status } from "../components/auth";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
-import useUsernameDocTitle from "../utils/useUsernameDocTitle";
 
 const data = [
   {
@@ -52,8 +49,6 @@ const UserHub = () => {
     document.title = item.docTitle + (account ? ` : ${account.username}` : "");
     setForm(item.form);
   });
-
-  useUsernameDocTitle(document.title);
 
   useTimeOut(
     () => {

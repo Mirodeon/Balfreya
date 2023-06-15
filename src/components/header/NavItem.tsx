@@ -1,15 +1,26 @@
-
 import { Responsive } from "../../utils/useResponsive";
 import SvgFromJson, { INode } from "../utils/SvgFromJson";
-import NavBtn from "./NavBtn";
+import { NavBtn } from "../button";
 
-export interface NavItems { [key: string]: JSX.Element[] }
+export interface NavItems {
+  [key: string]: JSX.Element[];
+}
 
-const NavItem = (responsive: Responsive, data: { path: string, className: string, name: string, icone: INode, pos: string }[]) => {
+const NavItem = (
+  responsive: Responsive,
+  data: {
+    path: string;
+    className: string;
+    name: string;
+    icone: INode;
+    pos: string;
+  }[]
+) => {
   const items: NavItems = {
     left: [],
     rightAuth: [],
     rightNotAuth: [],
+    right: [],
   };
 
   const createNavItem = (
@@ -29,7 +40,15 @@ const NavItem = (responsive: Responsive, data: { path: string, className: string
     );
   };
 
-  data.map(item => createNavItem(item.path, item.className, item.name, SvgFromJson(item.icone), item.pos));
+  data.map((item) =>
+    createNavItem(
+      item.path,
+      item.className,
+      item.name,
+      SvgFromJson(item.icone),
+      item.pos
+    )
+  );
 
   return items;
 };

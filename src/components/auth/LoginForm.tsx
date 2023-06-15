@@ -4,9 +4,10 @@ import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import authSlice, { testAccount } from "../../store/slices/auth";
 import axiosService from "../../utils/axios";
-import InputForm from "./InputForm";
+import { InputForm } from ".";
 import { AxiosResponse } from "axios";
 import useTimeOut from "../../utils/useTimeOut";
+import { NavBtnForm } from "../button";
 
 const LoginForm = () => {
   const [message, setMessage] = useState("");
@@ -93,17 +94,12 @@ const LoginForm = () => {
           <div className="error_form">{message ? message : null}</div>
         </div>
       </div>
-      <button
-        type="submit"
-        disabled={loading}
-        className={"nav_btn" + btnClassName}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Login
-      </button>
+      <NavBtnForm
+        className={btnClassName}
+        content={"login"}
+        type={"submit"}
+        loading={loading}
+      />
     </form>
   );
 };

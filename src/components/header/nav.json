@@ -58,7 +58,7 @@
     "pos": "left"
   },
   {
-    "path": "/profile",
+    "path": "/user/profile",
     "className": "profile_nav",
     "name": "Profile",
     "icone": {

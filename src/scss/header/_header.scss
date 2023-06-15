@@ -3,10 +3,15 @@
     left: 0px;
     top: 0px;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    filter: drop-shadow(0px 0px 5px cyan);
+    background: var(--opacity);
+    filter: drop-shadow(0px 0px 5px var(--primary));
     box-sizing: border-box;
     z-index: 100;
+    transition: 0.5s;
+
+    &.hide_in_top {
+        top: -112px;
+    }
 
     .header_nav {
         display: flex;
@@ -43,8 +48,8 @@
 
         .title_header {
             font-size: 1.5rem;
-            color: cyan;
-            text-shadow: 0 0 5px cyan;
+            color: var(--primary);
+            text-shadow: 0 0 5px var(--primary);
             text-align: center;
 
             @include break768px {

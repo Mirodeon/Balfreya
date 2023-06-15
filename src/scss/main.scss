@@ -1,5 +1,6 @@
 @import "reset.css";
 @import url('https://fontlibrary.org//face/xolonium');
+@import "./variable";
 @import "./partials/responsiveMixins";
 @import "./partials/navBtn";
 @import "./header/header";
@@ -9,7 +10,7 @@
 #root {
     font-family: 'XoloniumRegular';
     /*background: radial-gradient(grey, black);*/
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 
 a {
@@ -17,8 +18,8 @@ a {
 }
 
 body {
-    background: radial-gradient(grey, black);
-    background-attachment:fixed;
+    background: radial-gradient(var(--tertiary), var(--secondary));
+    background-attachment: fixed;
 }
 
 button {
