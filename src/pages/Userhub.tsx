@@ -1,5 +1,4 @@
 import { useState } from "react";
-import useTimeOut from "../utils/useTimeOut";
 import useHealthCheck from "../utils/usehealthCheck";
 import useByPath from "../utils/useByPath";
 import { AuthRoutes } from "../routes";
@@ -39,7 +38,6 @@ const data = [
 
 const UserHub = () => {
   const account = useSelector((state: RootState) => state.auth.account);
-  const [connect, setConnect] = useState(true);
   const status = useHealthCheck();
   const [form, setForm] = useState(false);
   const messages = AuthRoutes({ data: data, key: "message" });
@@ -50,34 +48,14 @@ const UserHub = () => {
     setForm(item.form);
   });
 
-  useTimeOut(
-    () => {
-      setConnect(true);
-    },
-    status === "success" ? 2100 : null
-  );
-
-  const classNameStatus =
-    status === "pending"
-      ? " wait_check"
-      : status === "failed"
-      ? " fail_check"
-      : connect
-      ? ""
-      : " success_check";
-
   return (
     <div className="container_page_profile">
       <main className={"container_profile" + (form ? " form_profile" : "")}>
         <div className="container_welcome_profile">
-          <Cube status={classNameStatus} />
+          <Cube status={status.className} />
           <div className="welcome_profile">{messages}</div>
         </div>
-        {connect ? (
-          contents
-        ) : (
-          <Status status={status} classNameStatus={classNameStatus} />
-        )}
+        {status.connect ? contents : <Status status={status} />}
       </main>
     </div>
   );

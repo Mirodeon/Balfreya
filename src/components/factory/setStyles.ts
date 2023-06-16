@@ -1,4 +1,4 @@
-export interface Styles {
+export interface DataStyles {
     [key: string]: string;
     "primary": string;
     "primary-light": string;
@@ -9,7 +9,7 @@ export interface Styles {
     "error": string;
 }
 
-const initialState: Styles = {
+const initialState: DataStyles = {
     "primary": "",
     "primary-light": "",
     "secondary": "",
@@ -19,7 +19,7 @@ const initialState: Styles = {
     "error": "",
 };
 
-export const setStyles = (styles: Styles) => {
+export const setStyles = (styles: DataStyles) => {
     let root = document.documentElement;
     Object.keys(styles).forEach(key => root.style.setProperty(`--${key}`, styles[key]));
 }

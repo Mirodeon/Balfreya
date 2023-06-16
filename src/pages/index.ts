@@ -1,4 +1,5 @@
+import Logout from "./Logout";
 import SvgToJSON from "./SvgToJSON";
 import UserHub from "./Userhub";
 
-export { SvgToJSON, UserHub };
+export { Logout, SvgToJSON, UserHub };

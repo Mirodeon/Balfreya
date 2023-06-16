@@ -1,5 +1,7 @@
+import { StatusResponse } from "../../utils/usehealthCheck";
+
 type CubeProps = {
-  status: " wait_check" | " fail_check" | " success_check" | "";
+  status: StatusResponse["className"];
 };
 
 const Cube = ({ status }: CubeProps) => {

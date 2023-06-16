@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../../store";
 import { useState } from "react";
-import useTimeOut from "../utils/useTimeOut";
-import { addClassName, removeClassName } from "../utils/addClassName";
-import useBackgroundAverageRgb from "../utils/useBackgroundAverageRgb";
-import { NavBtnClick } from "../components/button";
-import cssToStyle from "../utils/cssToStyle";
+import useTimeOut from "../../utils/useTimeOut";
+import { addClassName, removeClassName } from "../../utils/addClassName";
+import useBackgroundAverageRgb from "../../utils/useBackgroundAverageRgb";
+import { NavBtnClick } from "../button";
+import cssToStyle from "../../utils/cssToStyle";
 
 type SlideProps = {
   data: string[];

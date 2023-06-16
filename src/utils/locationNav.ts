@@ -1,6 +1,8 @@
-const locationNav = (currentPath: string, navLocation: { path: string; className: string; }[]) => {
+import { resetStyles } from "../components/factory/setStyles";
+
+const locationNav = (currentPath: string, navLocation: { path: string; className: string; }[], origin: boolean) => {
     let activeNavBtns = document.querySelectorAll(".currentLocation");
-    let mainHeader = document.querySelector(".main_header");
+    let originHeader = document.querySelector(".origin_header");
     let locate = false;
 
     activeNavBtns.forEach((btn) => {
@@ -15,10 +17,11 @@ const locationNav = (currentPath: string, navLocation: { path: string; className
         }
     });
 
-    if (locate) {
-        mainHeader?.classList.remove("hide_in_top");
+    if (locate && origin) {
+        originHeader?.classList.remove("hide_in_top");
+        resetStyles();
     } else {
-        mainHeader?.classList.add("hide_in_top");
+        originHeader?.classList.add("hide_in_top");
     }
 };
 

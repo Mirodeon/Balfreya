@@ -4,11 +4,11 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import useResponsive from "./utils/useResponsive";
 import Header from "./components/header/Header";
-import { SvgToJSON, UserHub } from "./pages";
-import Logout from "./pages/Logout";
-import Slide from "./pages/Slide";
+import { Logout, SvgToJSON, UserHub } from "./pages";
+import Slide from "./components/slider/Slide";
 import { data as dataImg } from "./img";
 import Factory from "./components/factory/Factory";
+import dataNav from "./components/header/nav.json";
 
 function App() {
   const responsive = useResponsive();
@@ -17,7 +17,12 @@ function App() {
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
         <Router>
-          <Header responsive={responsive} main={true} />
+          <Header
+            responsive={responsive}
+            main={true}
+            title={"Balfreya"}
+            data={dataNav}
+          />
           <Routes>
             <Route path="/user/*" element={<UserHub />} />
             <Route path="/logout" element={<Logout />} />
@@ -29,20 +34,18 @@ function App() {
                   data={dataImg}
                   width={"80%"}
                   slideHeight={"calc(70vh - 112px)"}
-                  cssStyle="margin-top: 112px;"
+                  cssStyle={
+                    "position: absolute; top: calc(50% + 28px); left: 50%; transform: translate(-50%, -50%);"
+                  }
                 />
               }
             />
-            <Route path="*" element={<Factory />} />
+            <Route path="*" element={<Factory responsive={responsive} />} />
           </Routes>
         </Router>
       </PersistGate>
     </Provider>
   );
 }
-
-const Test = () => {
-  return <div>Time to code.</div>;
-};
 
 export default App;

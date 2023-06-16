@@ -6,8 +6,12 @@
     background: var(--opacity);
     filter: drop-shadow(0px 0px 5px var(--primary));
     box-sizing: border-box;
-    z-index: 100;
-    transition: 0.5s;
+    z-index: 99;
+    transition: 0.7s;
+
+    &.origin_header {
+        z-index: 100;
+    }
 
     &.hide_in_top {
         top: -112px;

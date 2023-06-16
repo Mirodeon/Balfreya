@@ -1,13 +1,14 @@
+import { StatusResponse } from "../../utils/usehealthCheck";
+
 type StatusProps = {
-  status: "pending" | "failed" | "success";
-  classNameStatus: " wait_check" | " fail_check" | " success_check" | "";
+  status: StatusResponse;
 };
 
-const Status = ({ status, classNameStatus }: StatusProps) => {
+const Status = ({ status }: StatusProps) => {
   return (
-    <div className={"container_status_profile" + classNameStatus}>
+    <div className={"container_status_profile" + status.className}>
       <p className="status_profile">
-        {status === "pending" ? (
+        {status.status === "pending" ? (
           <>
             server is starting
             <br />
@@ -15,7 +16,7 @@ const Status = ({ status, classNameStatus }: StatusProps) => {
             <br />
             (up to 30s)
           </>
-        ) : status === "failed" ? (
+        ) : status.status === "failed" ? (
           <>
             server is offline
             <br />

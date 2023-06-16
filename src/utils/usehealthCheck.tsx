@@ -1,10 +1,34 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import useTimeOut from "./useTimeOut";
 
-const useHealthCheck = () => {
+export interface StatusResponse {
+  status: "pending" | "failed" | "success";
+  className: " wait_check" | " fail_check" | " success_check" | "";
+  connect: boolean;
+}
+
+const useHealthCheck = (): StatusResponse => {
   const [status, setStatus] = useState<"pending" | "failed" | "success">(
     "pending"
   );
+  const [connect, setConnect] = useState(true);
+
+  useTimeOut(
+    () => {
+      setConnect(true);
+    },
+    status === "success" ? 2100 : null
+  );
+
+  const className =
+    status === "pending"
+      ? " wait_check"
+      : status === "failed"
+      ? " fail_check"
+      : connect
+      ? ""
+      : " success_check";
 
   useEffect(() => {
     if (process.env.REACT_APP_HEALTH_CHECK) {
@@ -23,7 +47,7 @@ const useHealthCheck = () => {
     // eslint-disable-next-line
   }, []);
 
-  return status;
+  return { status: status, className: className, connect: connect };
 };
 
 export default useHealthCheck;

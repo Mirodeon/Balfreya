@@ -6,16 +6,15 @@ export interface NavItems {
   [key: string]: JSX.Element[];
 }
 
-const NavItem = (
-  responsive: Responsive,
-  data: {
-    path: string;
-    className: string;
-    name: string;
-    icone: INode;
-    pos: string;
-  }[]
-) => {
+export interface DataNav {
+  path: string;
+  className: string;
+  name: string;
+  icone: INode;
+  pos: string;
+}
+
+const NavItem = (responsive: Responsive, data: DataNav[]) => {
   const items: NavItems = {
     left: [],
     rightAuth: [],
