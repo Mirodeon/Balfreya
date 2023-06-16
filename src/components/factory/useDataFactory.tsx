@@ -25,7 +25,7 @@ const useDataFactory = () => {
         navigate("/");
       }); */
     axios
-      .get("http://localhost:3000/test.json")
+      .get(process.env.REACT_APP_API_URL + "/test.json")
       .then((res) => {
         if (res) {
           setData(res.data);
