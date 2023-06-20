@@ -4,11 +4,11 @@ type StatusProps = {
   status: StatusResponse;
 };
 
-const Status = ({ status }: StatusProps) => {
+const Status = (props: StatusProps) => {
   return (
-    <div className={"container_status_profile" + status.className}>
+    <div className={"container_status_profile" + props.status.className}>
       <p className="status_profile">
-        {status.status === "pending" ? (
+        {props.status.status === "pending" ? (
           <>
             server is starting
             <br />
@@ -16,7 +16,7 @@ const Status = ({ status }: StatusProps) => {
             <br />
             (up to 30s)
           </>
-        ) : status.status === "failed" ? (
+        ) : props.status.status === "failed" ? (
           <>
             server is offline
             <br />

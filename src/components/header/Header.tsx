@@ -13,28 +13,28 @@ type HeaderProps = {
   data: DataNav[];
 };
 
-const Header = ({ responsive, main, title, data }: HeaderProps) => {
+const Header = (props: HeaderProps) => {
   const account = useSelector((state: RootState) => state.auth.account);
   const [btns, setBtns] = useState<NavItems | null>(null);
   const path = useLocation().pathname;
 
   useEffect(() => {
-    setBtns(NavItem(responsive, data));
-  }, [data, responsive]);
+    setBtns(NavItem(props.responsive, props.data));
+  }, [props.data, props.responsive]);
 
   useEffect(() => {
-    locationNav(path, data, main);
-  }, [path, btns, data, main]);
+    locationNav(path, props.data, props.main);
+  }, [path, btns, props.data, props.main]);
 
   return (
-    <header className={"main_header" + (main ? " origin_header" : "")}>
+    <header className={"main_header" + (props.main ? " origin_header" : "")}>
       <nav className="header_nav">
         <div className="left_header_nav">{btns?.left}</div>
         <h1 className="title_header" style={{ textTransform: "uppercase" }}>
-          {title}
+          {props.title}
         </h1>
         <div className="right_header_nav">
-          {main ? (
+          {props.main ? (
             account ? (
               <>{btns?.rightAuth}</>
             ) : (

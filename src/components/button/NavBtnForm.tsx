@@ -5,14 +5,14 @@ type NavBtnFormProps = {
   loading: boolean;
 };
 
-const NavBtnForm = ({ className, content, type, loading }: NavBtnFormProps) => {
+const NavBtnForm = (props: NavBtnFormProps) => {
   return (
-    <button type={type} disabled={loading} className={"nav_btn" + className}>
+    <button type={props.type} disabled={props.loading} className={"nav_btn" + props.className}>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      {content}
+      {props.content}
     </button>
   );
 };

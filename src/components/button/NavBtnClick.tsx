@@ -4,14 +4,14 @@ type NavBtnClickProps = {
   onClick: () => void;
 };
 
-const NavBtnClick = ({ className, content, onClick }: NavBtnClickProps) => {
+const NavBtnClick = (props: NavBtnClickProps) => {
   return (
-    <div className={"nav_btn " + className} onClick={onClick}>
+    <div className={"nav_btn " + props.className} onClick={props.onClick}>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      {content}
+      {props.content}
     </div>
   );
 };

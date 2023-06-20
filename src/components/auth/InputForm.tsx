@@ -8,15 +8,7 @@ type InputFormProps = {
     showMessage: boolean;
 };
 
-const InputForm = ({
-    name,
-    message,
-    error,
-    value,
-    handleChange,
-    handleBlur,
-    showMessage,
-}: InputFormProps) => {
+const InputForm = (props: InputFormProps) => {
     const capitalizeFirstLetter = (string: string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
@@ -26,22 +18,22 @@ const InputForm = ({
             <input
                 className={
                     "input_form" +
-                    (message ? " incorrect_input" : "") +
-                    (error ? " invalid_input" : "")
+                    (props.message ? " incorrect_input" : "") +
+                    (props.error ? " invalid_input" : "")
                 }
-                id={name}
-                type={name}
-                placeholder={capitalizeFirstLetter(name)}
-                name={name}
-                value={value}
-                onChange={handleChange}
-                onBlur={handleBlur}
+                id={props.name}
+                type={props.name}
+                placeholder={capitalizeFirstLetter(props.name)}
+                name={props.name}
+                value={props.value}
+                onChange={props.handleChange}
+                onBlur={props.handleBlur}
             />
-            <label htmlFor={name} className="label_form">
-                {capitalizeFirstLetter(name)}
+            <label htmlFor={props.name} className="label_form">
+                {capitalizeFirstLetter(props.name)}
             </label>
             <div className="error_form">
-                {error ? error : message && showMessage ? message : null}
+                {props.error ? props.error : props.message && props.showMessage ? props.message : null}
             </div>
         </div>
     );

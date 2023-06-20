@@ -4,9 +4,9 @@ type CubeProps = {
   status: StatusResponse["className"];
 };
 
-const Cube = ({ status }: CubeProps) => {
+const Cube = (props: CubeProps) => {
   return (
-    <div className={"container_cube" + status}>
+    <div className={"container_cube" + props.status}>
       <div className="cube">
         <div className="top"></div>
         <div className="face_cube">

@@ -1,4 +1,4 @@
-import { resetStyles } from "../components/factory/setStyles";
+import { setStyles as Styles } from "../components/factory";
 
 const locationNav = (currentPath: string, navLocation: { path: string; className: string; }[], origin: boolean) => {
     let activeNavBtns = document.querySelectorAll(".currentLocation");
@@ -19,7 +19,7 @@ const locationNav = (currentPath: string, navLocation: { path: string; className
 
     if (locate && origin) {
         originHeader?.classList.remove("hide_in_top");
-        resetStyles();
+        Styles.resetStyles();
     } else {
         originHeader?.classList.add("hide_in_top");
     }

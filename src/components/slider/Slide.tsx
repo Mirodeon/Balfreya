@@ -5,16 +5,17 @@ import useTimeOut from "../../utils/useTimeOut";
 import { addClassName, removeClassName } from "../../utils/addClassName";
 import useBackgroundAverageRgb from "../../utils/useBackgroundAverageRgb";
 import { NavBtnClick } from "../button";
-import cssToStyle from "../../utils/cssToStyle";
+import { addStyleToObject } from "../../utils/cssToStyle";
 
 type SlideProps = {
   data: string[];
   width: string;
   slideHeight: string;
+  gridArea?: string;
   cssStyle?: string;
 };
 
-const Slide = ({ data, slideHeight, width, cssStyle }: SlideProps) => {
+const Slide = (props: SlideProps) => {
   const account = useSelector((state: RootState) => state.auth.account);
   document.title =
     "Balfreya - Slide" + (account ? ` : ${account.username}` : "");
@@ -22,17 +23,18 @@ const Slide = ({ data, slideHeight, width, cssStyle }: SlideProps) => {
   const [slide2, setSlide2] = useState(0);
   const [container, setContainer] = useState<1 | 2>(1);
   const [direction, setDirection] = useState<"next" | "prev" | null>(null);
-  const bg1 = useBackgroundAverageRgb(data[slide1]);
-  const bg2 = useBackgroundAverageRgb(data[slide2]);
-  const style = cssStyle
-    ? { ...{ width: width }, ...cssToStyle(cssStyle) }
-    : { width: width };
+  const bg1 = useBackgroundAverageRgb(props.data[slide1]);
+  const bg2 = useBackgroundAverageRgb(props.data[slide2]);
+  const style = addStyleToObject(
+    addStyleToObject({ width: props.width }, props.cssStyle),
+    props.gridArea ? { gridArea: props.gridArea } : props.gridArea
+  );
 
   const prev = (slide: number) => {
-    return slide !== 0 ? slide - 1 : data.length - 1;
+    return slide !== 0 ? slide - 1 : props.data.length - 1;
   };
   const next = (slide: number) => {
-    return slide !== data.length - 1 ? slide + 1 : 0;
+    return slide !== props.data.length - 1 ? slide + 1 : 0;
   };
 
   const sliding = (
@@ -70,15 +72,15 @@ const Slide = ({ data, slideHeight, width, cssStyle }: SlideProps) => {
 
   return (
     <div className="container_slide" style={style}>
-      <div className="container_slide_img" style={{ height: slideHeight }}>
+      <div className="container_slide_img" style={{ height: props.slideHeight }}>
         <div
           className="container_img container_2 not_display"
           style={{ background: bg2 }}
         >
-          <img className="img_slide" src={data[slide2]} alt="slide" />
+          <img className="img_slide" src={props.data[slide2]} alt="slide" />
         </div>
         <div className="container_img container_1" style={{ background: bg1 }}>
-          <img className="img_slide" src={data[slide1]} alt="slide" />
+          <img className="img_slide" src={props.data[slide1]} alt="slide" />
         </div>
       </div>
       <div className="container_button">

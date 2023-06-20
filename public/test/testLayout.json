@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "gridTemplateAreas": "",
+        "children": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "path": "/"
+    },
+    {
+        "id": 2,
+        "gridTemplateAreas": "",
+        "children": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "path": "/pouet"
+    },
+    {
+        "id": 3,
+        "gridTemplateAreas": "",
+        "children": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "path": "/yo"
+    },
+    {
+        "id": 4,
+        "gridTemplateAreas": "",
+        "children": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "path": "/giga"
+    }
+]

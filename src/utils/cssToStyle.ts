@@ -13,4 +13,8 @@ const cssToStyle = (style: string) => {
     return Object.assign({}, ...keyValues);
 }
 
+export const addStyleToObject = (style: Object, add: string | undefined | Object) => {
+    return add ? { ...style, ...(typeof add === "string" ? cssToStyle(add) : add) } : style;
+}
+
 export default cssToStyle;

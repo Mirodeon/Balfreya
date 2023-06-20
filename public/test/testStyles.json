@@ -1,0 +1,9 @@
+{
+    "primary": "rgb(255, 0, 255)",
+    "primary-light": "rgba(255, 0, 255, 0.5)",
+    "secondary": "black",
+    "secondary-light": "rgba(0, 0, 0, 0.5)",
+    "tertiary": "rgb(150, 0, 0)",
+    "tertiary-light": "rgba(150, 0, 0, 0.5)",
+    "error": "rgba(255, 0, 255, 0.5)"
+}

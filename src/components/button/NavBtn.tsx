@@ -6,14 +6,14 @@ type NavBtnProps = {
   content: string | JSX.Element;
 };
 
-const NavBtn = ({ path, className, content }: NavBtnProps) => {
+const NavBtn = (props: NavBtnProps) => {
   return (
-    <Link to={path} className={"nav_btn " + className}>
+    <Link to={props.path} className={"nav_btn " + props.className}>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      {content}
+      {props.content}
     </Link>
   );
 };
