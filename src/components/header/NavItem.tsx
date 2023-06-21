@@ -1,18 +1,6 @@
-import { Responsive } from "../../utils/useResponsive";
-import SvgFromJson, { INode } from "../utils/SvgFromJson";
+import SvgFromJson from "../utils/SvgFromJson";
 import { NavBtn } from "../button";
-
-export interface NavItems {
-  [key: string]: JSX.Element[];
-}
-
-export interface DataNav {
-  path: string;
-  className: string;
-  name: string;
-  icone: INode;
-  pos: string;
-}
+import { DataNav, NavItems, Responsive } from "../../type/type";
 
 const NavItem = (responsive: Responsive, data: DataNav[]) => {
   const items: NavItems = {

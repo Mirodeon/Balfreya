@@ -1,10 +1,9 @@
 import Header from "../header/Header";
-import { Responsive } from "../../utils/useResponsive";
 import useHealthCheck from "../../utils/usehealthCheck";
 import { Status } from "../auth";
-import { RoutesLayout, setStyles as Styles, useDataFactory } from ".";
-import { useEffect } from "react";
+import { RoutesLayout, useDataFactory, useStyles } from ".";
 import useDataTestFactory from "./test/useDataTestFactory";
+import { Responsive } from "../../type/type";
 
 type FactoryProps = {
   responsive: Responsive;
@@ -14,11 +13,7 @@ const Factory = (props: FactoryProps) => {
   const status = useHealthCheck();
   const data = useDataTestFactory();
 
-  useEffect(() => {
-    if (data) {
-      Styles.setStyles(data.styles);
-    }
-  }, [data]);
+  useStyles(data);
 
   return (
     <>

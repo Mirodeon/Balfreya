@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import { DataNav } from "../../header/NavItem";
-import { setStyles } from "..";
 import { fetcher } from "../../../utils/axios";
-import { DataFactory } from "../useDataFactory";
-import { DataLayout } from "../LayoutGrid";
+import { DataFactory, DataLayout, DataNav, DataStyles } from "../../../type/type";
 
 const useDataTestfactory = (): DataFactory | null => {
     const [dataNav, setDataNav] = useState<DataNav[] | null>(null);
-    const [dataStyle, setDataStyle] = useState<setStyles.DataStyles | null>(null);
+    const [dataStyle, setDataStyle] = useState<DataStyles | null>(null);
     const [dataLayout, setDataLayout] = useState<DataLayout[] | null>(null);
     const [dataTitle, setDataTitle] = useState<string | null>(null);
 

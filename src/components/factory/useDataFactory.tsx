@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react";
-import { DataNav } from "../header/NavItem";
-import { setStyles as Styles } from ".";
 import { useLocation, useNavigate } from "react-router-dom";
 import { fetcher } from "../../utils/axios";
-import { DataLayout } from "./LayoutGrid";
-
-export type DataFactory = {
-  [key: string]: any;
-  nav: DataNav[];
-  styles: Styles.DataStyles;
-  layout: DataLayout[];
-  title: string;
-};
+import { DataFactory } from "../../type/type";
 
 const useDataFactory = () => {
   const navigate = useNavigate();

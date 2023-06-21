@@ -1,12 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import useTimeOut from "./useTimeOut";
-
-export interface StatusResponse {
-  status: "pending" | "failed" | "success";
-  className: " wait_check" | " fail_check" | " success_check" | "";
-  connect: boolean;
-}
+import { StatusResponse } from "../type/type";
 
 const useHealthCheck = (): StatusResponse => {
   const [status, setStatus] = useState<"pending" | "failed" | "success">(
@@ -25,10 +20,10 @@ const useHealthCheck = (): StatusResponse => {
     status === "pending"
       ? " wait_check"
       : status === "failed"
-      ? " fail_check"
-      : connect
-      ? ""
-      : " success_check";
+        ? " fail_check"
+        : connect
+          ? ""
+          : " success_check";
 
   useEffect(() => {
     if (process.env.REACT_APP_HEALTH_CHECK) {

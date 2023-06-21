@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
-
-export interface Responsive {
-  width: boolean;
-  height: boolean;
-}
+import { Responsive } from "../type/type";
 
 const useResponsive = (): Responsive => {
   const [width, setWidth] = useState<number>(1024);

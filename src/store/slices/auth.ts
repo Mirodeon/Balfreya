@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AccountResponse } from "../../utils/types";
+import { AccountResponse } from "../../type/type";
 
 type State = {
   token: string | null;

@@ -1,5 +1,6 @@
 import { RouteObject, useRoutes } from "react-router-dom";
-import LayoutGrid, { DataLayout } from "./LayoutGrid";
+import LayoutGrid from "./LayoutGrid";
+import { DataLayout } from "../../type/type";
 
 type RoutesLayoutProps = {
     data: DataLayout[];
@@ -12,10 +13,10 @@ const RoutesLayout = ({ data }: RoutesLayoutProps) => {
         if (item.path) {
             routesArray.push({
                 path: item.path,
-                element: <>
+                element:
                     <LayoutGrid gridTemplateAreas={item.gridTemplateAreas}>
                         {item.id}Giga mega pouet
-                    </LayoutGrid></>
+                    </LayoutGrid>
             });
         }
     })

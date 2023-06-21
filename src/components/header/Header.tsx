@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { RootState } from "../../store";
 import locationNav from "../../utils/locationNav";
-import { Responsive } from "../../utils/useResponsive";
-import NavItem, { DataNav, NavItems } from "./NavItem";
+import NavItem from "./NavItem";
+import { DataNav, NavItems, Responsive } from "../../type/type";
 
 type HeaderProps = {
   responsive: Responsive;

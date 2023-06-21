@@ -1,12 +1,5 @@
 import { PropsWithChildren } from "react";
 
-export interface DataLayout {
-    id: number;
-    gridTemplateAreas: string;
-    children: number[];
-    path?: string;
-}
-
 type LayoutGridProps = {
     gridTemplateAreas: string;
 }

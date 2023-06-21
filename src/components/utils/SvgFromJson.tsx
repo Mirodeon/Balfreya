@@ -1,25 +1,4 @@
-export interface INode {
-    name: string;
-    type: string;
-    value: string;
-    attributes: {
-        xmlns: string;
-        width: string;
-        height: string;
-        fill: string;
-        viewBox: string;
-    };
-    children: {
-        name: string;
-        type: string;
-        value: string;
-        attributes: {
-            d: string;
-            fillRule?: string;
-        };
-        children: never[];
-    }[];
-}
+import { INode } from "../../type/type";
 
 const SvgFromJson = (data: INode) => {
     return <svg

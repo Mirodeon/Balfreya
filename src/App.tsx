@@ -7,7 +7,7 @@ import Header from "./components/header/Header";
 import { Logout, SvgToJSON, UserHub } from "./pages";
 import Slide from "./components/slider/Slide";
 import { data as dataImg } from "./img";
-import Factory from "./components/factory/Factory";
+import { Factory } from "./components/factory";
 import dataNav from "./components/header/nav.json";
 
 function App() {

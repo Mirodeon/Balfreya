@@ -1,4 +1,4 @@
-import { StatusResponse } from "../../utils/usehealthCheck";
+import { StatusResponse } from "../../type/type";
 
 type CubeProps = {
   status: StatusResponse["className"];
