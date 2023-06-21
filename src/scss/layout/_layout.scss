@@ -1,0 +1,18 @@
+.main_layout_container {
+    max-width: 1280px;
+    margin: auto;
+    box-sizing: border-box;
+    margin-top: 112px;
+    height: 100%;
+
+    @include break768px {
+        max-width: 768px;
+    }
+
+    .layout_grid {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+}

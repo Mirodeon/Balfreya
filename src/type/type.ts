@@ -16,7 +16,7 @@ export interface DataFactory {
 export interface DataLayout {
     id: number;
     gridTemplateAreas: string;
-    children: number[];
+    children: DataLayoutGridChildren[];
     path?: string;
 }
 
@@ -60,6 +60,11 @@ export interface INode {
         };
         children: never[];
     }[];
+}
+
+export interface DataLayoutGridChildren {
+    model: number;
+    gridArea: string;
 }
 
 export interface NavItems {

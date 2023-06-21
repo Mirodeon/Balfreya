@@ -5,7 +5,14 @@ type LayoutGridProps = {
 }
 
 const LayoutGrid = (props: PropsWithChildren<LayoutGridProps>) => {
-    return <div style={{ gridTemplateAreas: props.gridTemplateAreas }}>{props.children}</div>
+    return (
+        < div
+            className="layout_grid"
+            style={{ gridTemplateAreas: props.gridTemplateAreas }}
+        >
+            {props.children}
+        </div >
+    )
 }
 
 export default LayoutGrid;

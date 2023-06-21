@@ -1,6 +1,7 @@
 import { RouteObject, useRoutes } from "react-router-dom";
 import LayoutGrid from "./LayoutGrid";
 import { DataLayout } from "../../type/type";
+import LayoutGridChildren from "./LayoutGridChildren";
 
 type RoutesLayoutProps = {
     data: DataLayout[];
@@ -15,7 +16,7 @@ const RoutesLayout = ({ data }: RoutesLayoutProps) => {
                 path: item.path,
                 element:
                     <LayoutGrid gridTemplateAreas={item.gridTemplateAreas}>
-                        {item.id}Giga mega pouet
+                        {item.children.map(element => <LayoutGridChildren data={element} />)}
                     </LayoutGrid>
             });
         }
