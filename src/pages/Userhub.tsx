@@ -42,6 +42,7 @@ const UserHub = () => {
   const [form, setForm] = useState(false);
   const messages = AuthRoutes({ data: data, key: "message" });
   const contents = AuthRoutes({ data: data, key: "content" });
+  console.log(messages);
 
   useByPath(data, (item: { docTitle: string; form: boolean }) => {
     document.title = item.docTitle + (account ? ` : ${account.username}` : "");

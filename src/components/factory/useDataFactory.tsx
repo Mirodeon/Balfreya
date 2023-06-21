@@ -10,6 +10,7 @@ export type DataFactory = {
   nav: DataNav[];
   styles: Styles.DataStyles;
   layout: DataLayout[];
+  title: string;
 };
 
 const useDataFactory = () => {

@@ -8,7 +8,7 @@
             3,
             4
         ],
-        "path": "/"
+        "path": "/factory"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
             3,
             4
         ],
-        "path": "/pouet"
+        "path": "/factory/pouet"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
             3,
             4
         ],
-        "path": "/yo"
+        "path": "/factory/yo"
     },
     {
         "id": 4,
@@ -41,6 +41,6 @@
             3,
             4
         ],
-        "path": "/giga"
+        "path": "/factory/giga"
     }
 ]

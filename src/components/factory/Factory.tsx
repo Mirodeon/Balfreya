@@ -2,12 +2,9 @@ import Header from "../header/Header";
 import { Responsive } from "../../utils/useResponsive";
 import useHealthCheck from "../../utils/usehealthCheck";
 import { Status } from "../auth";
-import { LayoutGrid, setStyles as Styles, useDataFactory } from ".";
-import { useEffect, useState } from "react";
+import { RoutesLayout, setStyles as Styles, useDataFactory } from ".";
+import { useEffect } from "react";
 import useDataTestFactory from "./test/useDataTestFactory";
-import { RouteObject, useRoutes } from "react-router-dom";
-import RoutesLayout from "./RoutesLayout";
-import RouterFactory from "./RouterFactory";
 
 type FactoryProps = {
   responsive: Responsive;
@@ -30,10 +27,10 @@ const Factory = (props: FactoryProps) => {
           <Header
             responsive={props.responsive}
             main={false}
-            title={"Factory"}
+            title={data.title}
             data={data.nav}
           />
-          <RouterFactory data={data} />
+          <RoutesLayout data={data.layout} />
         </>
       ) : (
         <Status status={status} />
