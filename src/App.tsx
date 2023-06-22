@@ -9,6 +9,7 @@ import Slide from "./components/slider/Slide";
 import { data as dataImg } from "./img";
 import { Factory } from "./components/factory";
 import dataNav from "./components/header/nav.json";
+import Chip from "./components/menu/Chip";
 
 function App() {
   const responsive = useResponsive();
@@ -23,6 +24,7 @@ function App() {
             title={"Balfreya"}
             data={dataNav}
           />
+          <Chip responsive={responsive} data={dataNav} />
           <Routes>
             <Route path="/user/*" element={<UserHub />} />
             <Route path="/logout" element={<Logout />} />
@@ -33,7 +35,8 @@ function App() {
                 <Slide
                   data={dataImg}
                   width={"80%"}
-                  slideHeight={"calc(70vh - 112px)"}
+                  height={"calc(70vh - 112px)"}
+                  id={0}
                   cssStyle={
                     "position: absolute; top: calc(50% + 28px); left: 50%; transform: translate(-50%, -50%);"
                   }

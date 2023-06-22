@@ -1,21 +1,26 @@
 [
     {
         "id": 1,
+        "title": "Factory - Home",
         "gridTemplateAreas": "'one one one one' 'two two two two' 'three three three three' 'four four four four'",
         "children": [
             {
+                "id": 1,
                 "model": 1,
                 "gridArea": "one"
             },
             {
+                "id": 2,
                 "model": 1,
                 "gridArea": "two"
             },
             {
+                "id": 3,
                 "model": 1,
                 "gridArea": "three"
             },
             {
+                "id": 4,
                 "model": 1,
                 "gridArea": "four"
             }
@@ -24,21 +29,26 @@
     },
     {
         "id": 2,
+        "title": "Factory - Pouet",
         "gridTemplateAreas": "'one two three four' 'one two three four' 'one two three four' 'one two three four'",
         "children": [
             {
+                "id": 1,
                 "model": 1,
                 "gridArea": "one"
             },
             {
+                "id": 2,
                 "model": 1,
                 "gridArea": "two"
             },
             {
+                "id": 3,
                 "model": 1,
                 "gridArea": "three"
             },
             {
+                "id": 4,
                 "model": 1,
                 "gridArea": "four"
             }
@@ -47,21 +57,26 @@
     },
     {
         "id": 3,
+        "title": "Factory - Yo",
         "gridTemplateAreas": "'one one two two' 'one one two two' 'three three four four' 'three three four four'",
         "children": [
             {
+                "id": 1,
                 "model": 1,
                 "gridArea": "one"
             },
             {
+                "id": 2,
                 "model": 1,
                 "gridArea": "two"
             },
             {
+                "id": 3,
                 "model": 1,
                 "gridArea": "three"
             },
             {
+                "id": 4,
                 "model": 1,
                 "gridArea": "four"
             }
@@ -70,21 +85,26 @@
     },
     {
         "id": 4,
+        "title": "Factory - Giga",
         "gridTemplateAreas": "'one one one two' 'three . . two' 'three . . two' 'three four four four'",
         "children": [
             {
+                "id": 1,
                 "model": 1,
                 "gridArea": "one"
             },
             {
+                "id": 2,
                 "model": 1,
                 "gridArea": "two"
             },
             {
+                "id": 3,
                 "model": 1,
                 "gridArea": "three"
             },
             {
+                "id": 4,
                 "model": 1,
                 "gridArea": "four"
             }

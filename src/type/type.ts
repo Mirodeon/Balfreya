@@ -18,6 +18,7 @@ export interface DataLayout {
     gridTemplateAreas: string;
     children: DataLayoutGridChildren[];
     path?: string;
+    title: string;
 }
 
 export interface DataNav {
@@ -63,6 +64,7 @@ export interface INode {
 }
 
 export interface DataLayoutGridChildren {
+    id: number;
     model: number;
     gridArea: string;
 }

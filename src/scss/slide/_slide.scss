@@ -14,10 +14,12 @@
     .container_slide_img {
         position: relative;
         width: 100%;
+        height: calc(100% - 3.375rem);
         background: radial-gradient(var(--secondary-light), var(--secondary) 100%);
         border-radius: calc(40px - 1rem);
         box-sizing: border-box;
         overflow: hidden;
+        min-height: calc(300px - 3.375rem);
 
         .container_img {
             position: absolute;

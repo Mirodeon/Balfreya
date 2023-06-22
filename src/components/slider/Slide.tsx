@@ -10,15 +10,14 @@ import { addStyleToObject } from "../../utils/cssToStyle";
 type SlideProps = {
   data: string[];
   width: string;
-  slideHeight: string;
+  height: string;
+  id: number;
   gridArea?: string;
   cssStyle?: string;
 };
 
 const Slide = (props: SlideProps) => {
-  const account = useSelector((state: RootState) => state.auth.account);
-  document.title =
-    "Balfreya - Slide" + (account ? ` : ${account.username}` : "");
+  const idLayout = `id_layout_${props.id}`;
   const [slide1, setSlide1] = useState(0);
   const [slide2, setSlide2] = useState(0);
   const [container, setContainer] = useState<1 | 2>(1);
@@ -26,7 +25,7 @@ const Slide = (props: SlideProps) => {
   const bg1 = useBackgroundAverageRgb(props.data[slide1]);
   const bg2 = useBackgroundAverageRgb(props.data[slide2]);
   const style = addStyleToObject(
-    addStyleToObject({ width: props.width }, props.cssStyle),
+    addStyleToObject({ width: props.width, height: props.height }, props.cssStyle),
     props.gridArea ? { gridArea: props.gridArea } : props.gridArea
   );
 
@@ -49,21 +48,21 @@ const Slide = (props: SlideProps) => {
       }
       addClassName(
         [orientation],
-        container === 1 ? ".container_2" : ".container_1"
+        (container === 1 ? ".container_2" : ".container_1") + `.${idLayout}`
       );
       removeClassName(
         ["not_display"],
-        container === 1 ? ".container_2" : ".container_1"
+        (container === 1 ? ".container_2" : ".container_1") + `.${idLayout}`
       );
-      addClassName([`move_${orientation}`], ".container_img");
+      addClassName([`move_${orientation}`], `.container_img.${idLayout}`);
       setDirection(orientation);
     }
   };
 
   useTimeOut(
     () => {
-      addClassName(["not_display"], `.container_${container}`);
-      removeClassName([`move_${direction}`, `${direction}`], ".container_img");
+      addClassName(["not_display"], `.container_${container}.${idLayout}`);
+      removeClassName([`move_${direction}`, `${direction}`], `.container_img.${idLayout}`);
       setContainer(container === 1 ? 2 : 1);
       setDirection(null);
     },
@@ -72,14 +71,14 @@ const Slide = (props: SlideProps) => {
 
   return (
     <div className="container_slide" style={style}>
-      <div className="container_slide_img" style={{ height: props.slideHeight }}>
+      <div className="container_slide_img">
         <div
-          className="container_img container_2 not_display"
+          className={`container_img container_2 ${idLayout} not_display`}
           style={{ background: bg2 }}
         >
           <img className="img_slide" src={props.data[slide2]} alt="slide" />
         </div>
-        <div className="container_img container_1" style={{ background: bg1 }}>
+        <div className={`container_img container_1 ${idLayout}`} style={{ background: bg1 }}>
           <img className="img_slide" src={props.data[slide1]} alt="slide" />
         </div>
       </div>

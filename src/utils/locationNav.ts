@@ -1,28 +1,43 @@
 import { resetStyles } from "../components/factory/useStyles";
+import { DataNav } from "../type/type";
 
-const locationNav = (currentPath: string, navLocation: { path: string; className: string; }[], origin: boolean) => {
-    let activeNavBtns = document.querySelectorAll(".currentLocation");
-    let originHeader = document.querySelector(".origin_header");
+export const isLocate = (currentPath: string, navLocation: DataNav[], callBack?: (item: DataNav) => void) => {
     let locate = false;
-
-    activeNavBtns.forEach((btn) => {
-        btn.classList.remove("currentLocation");
-    });
-
     navLocation.forEach((item) => {
         if (currentPath === item.path) {
-            let currentNav = document.querySelectorAll(`.${item.className}`);
-            currentNav.forEach((item) => item.classList.add("currentLocation"));
+            if (callBack) {
+                callBack(item);
+            }
             locate = true;
         }
     });
+    return locate
+}
 
+const resetLocate = () => {
+    let activeNavBtns = document.querySelectorAll(".currentLocation");
+    activeNavBtns.forEach((btn) => {
+        btn.classList.remove("currentLocation");
+    });
+}
+
+const locationNav = (currentPath: string, navLocation: DataNav[], origin: boolean) => {
+    resetLocate()
+    let locate = isLocate(
+        currentPath,
+        navLocation,
+        (item: DataNav) => {
+            let currentNav = document.querySelectorAll(`.${item.className}`);
+            currentNav.forEach((item) => item.classList.add("currentLocation"));
+        }
+    );
+    let originHeader = document.querySelector(".origin_header");
     if (locate && origin) {
         originHeader?.classList.remove("hide_in_top");
         resetStyles();
     } else {
         originHeader?.classList.add("hide_in_top");
     }
-};
+}
 
 export default locationNav;

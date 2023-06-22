@@ -27,7 +27,7 @@ const Header = (props: HeaderProps) => {
   }, [path, btns, props.data, props.main]);
 
   return (
-    <header className={"main_header" + (props.main ? " origin_header" : "")}>
+    <header className={"main_header" + (props.main ? " origin_header" : " factory_header")}>
       <nav className="header_nav">
         <div className="left_header_nav">{btns?.left}</div>
         <h1 className="title_header" style={{ textTransform: "uppercase" }}>

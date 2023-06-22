@@ -15,8 +15,8 @@ const RoutesLayout = ({ data }: RoutesLayoutProps) => {
             routesArray.push({
                 path: item.path,
                 element:
-                    <LayoutGrid gridTemplateAreas={item.gridTemplateAreas}>
-                        {item.children.map(element => <LayoutGridChildren data={element} />)}
+                    <LayoutGrid gridTemplateAreas={item.gridTemplateAreas} title={item.title}>
+                        {item.children.map(element => <LayoutGridChildren data={element} key={element.id} />)}
                     </LayoutGrid>
             });
         }
