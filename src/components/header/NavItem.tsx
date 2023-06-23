@@ -10,31 +10,20 @@ const NavItem = (responsive: Responsive, data: DataNav[]) => {
     right: [],
   };
 
-  const createNavItem = (
-    path: string,
-    className: string,
-    name: string,
-    icone: JSX.Element,
-    pos: string
-  ) => {
-    items[pos].push(
-      <NavBtn
-        path={path}
-        className={className}
-        content={responsive.width ? name : icone}
-        key={name}
-      />
-    );
-  };
-
-  data.map((item) =>
-    createNavItem(
-      item.path,
-      item.className,
-      item.name,
-      SvgFromJson(item.icone),
-      item.pos
-    )
+  data.map(
+    (item) =>
+      items[item.pos].push(
+        <NavBtn
+          path={item.path}
+          className={item.className}
+          content={
+            responsive.width ?
+              item.name :
+              <SvgFromJson data={item.icone} />
+          }
+          key={item.name}
+        />
+      )
   );
 
   return items;

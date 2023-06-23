@@ -1,7 +1,6 @@
 import { RouteObject, useRoutes } from "react-router-dom";
-import LayoutGrid from "./LayoutGrid";
 import { DataLayout } from "../../type/type";
-import LayoutGridChildren from "./LayoutGridChildren";
+import { LayoutContainer, LayoutGrid, LayoutGridChildren } from ".";
 
 type RoutesLayoutProps = {
     data: DataLayout[];
@@ -28,7 +27,7 @@ const RoutesLayout = ({ data }: RoutesLayoutProps) => {
     console.log("Routes:");
     console.log(routes);
 
-    return <div className="main_layout_container">{routes}</div>;
+    return <LayoutContainer>{routes}</LayoutContainer>;
 }
 
 export default RoutesLayout;

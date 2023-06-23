@@ -1,7 +1,7 @@
 import { resetStyles } from "../components/factory/useStyles";
-import { DataNav } from "../type/type";
+import { DataNavList } from "../type/type";
 
-export const isLocate = (currentPath: string, navLocation: DataNav[], callBack?: (item: DataNav) => void) => {
+export const isLocate = (currentPath: string, navLocation: DataNavList[], callBack?: (item: DataNavList) => void) => {
     let locate = false;
     navLocation.forEach((item) => {
         if (currentPath === item.path) {
@@ -21,12 +21,12 @@ const resetLocate = () => {
     });
 }
 
-const locationNav = (currentPath: string, navLocation: DataNav[], origin: boolean) => {
+const locationNav = (currentPath: string, navLocation: DataNavList[], origin: boolean) => {
     resetLocate()
     let locate = isLocate(
         currentPath,
         navLocation,
-        (item: DataNav) => {
+        (item: DataNavList) => {
             let currentNav = document.querySelectorAll(`.${item.className}`);
             currentNav.forEach((item) => item.classList.add("currentLocation"));
         }

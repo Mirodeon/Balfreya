@@ -1,8 +1,7 @@
 @import "reset.css";
 @import url('https://fontlibrary.org//face/xolonium');
 @import "./variable/variable";
-@import "./partials/responsiveMixins";
-@import "./partials/navBtn";
+@import "./partials/partials";
 @import "./header/header";
 @import "./svgToJson/svgToJson";
 @import "./slide/slide";
@@ -20,6 +19,7 @@ a {
 body {
     background: radial-gradient(var(--tertiary), var(--secondary));
     background-attachment: fixed;
+    @include scrollBar;
 }
 
 button {

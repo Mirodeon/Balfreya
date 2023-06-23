@@ -1,14 +1,18 @@
 import { INode } from "../../type/type";
 
-const SvgFromJson = (data: INode) => {
+type SvgFromJsonProps = {
+    data: INode;
+}
+
+const SvgFromJson = (props: SvgFromJsonProps) => {
     return <svg
-        xmlns={data.attributes.xmlns}
-        width={data.attributes.width}
-        height={data.attributes.height}
-        fill={data.attributes.fill}
-        viewBox={data.attributes.viewBox}
+        xmlns={props.data.attributes.xmlns}
+        width={props.data.attributes.width}
+        height={props.data.attributes.height}
+        fill={props.data.attributes.fill}
+        viewBox={props.data.attributes.viewBox}
     >
-        {data.children.map(path =>
+        {props.data.children.map(path =>
             <path
                 d={path.attributes.d}
                 fillRule={
@@ -16,7 +20,7 @@ const SvgFromJson = (data: INode) => {
                         ? path.attributes.fillRule
                         : undefined
                 }
-                key={data.children.indexOf(path)}
+                key={props.data.children.indexOf(path)}
             >
             </path>
         )}

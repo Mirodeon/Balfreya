@@ -8,6 +8,7 @@ export interface AccountResponse {
 export interface DataFactory {
     [key: string]: any;
     nav: DataNav[];
+    navList: DataNavList[];
     styles: DataStyles;
     layout: DataLayout[];
     title: string;
@@ -27,6 +28,12 @@ export interface DataNav {
     name: string;
     icone: INode;
     pos: string;
+}
+
+export interface DataNavList {
+    path: string;
+    className: string;
+    name: string;
 }
 
 export interface DataStyles {

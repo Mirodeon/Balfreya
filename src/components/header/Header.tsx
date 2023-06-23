@@ -4,13 +4,14 @@ import { useLocation } from "react-router-dom";
 import { RootState } from "../../store";
 import locationNav from "../../utils/locationNav";
 import NavItem from "./NavItem";
-import { DataNav, NavItems, Responsive } from "../../type/type";
+import { DataNav, DataNavList, NavItems, Responsive } from "../../type/type";
 
 type HeaderProps = {
   responsive: Responsive;
   main: boolean;
   title: string;
-  data: DataNav[];
+  dataNav: DataNav[];
+  dataNavList: DataNavList[];
 };
 
 const Header = (props: HeaderProps) => {
@@ -19,12 +20,12 @@ const Header = (props: HeaderProps) => {
   const path = useLocation().pathname;
 
   useEffect(() => {
-    setBtns(NavItem(props.responsive, props.data));
-  }, [props.data, props.responsive]);
+    setBtns(NavItem(props.responsive, props.dataNav));
+  }, [props.dataNav, props.responsive]);
 
   useEffect(() => {
-    locationNav(path, props.data, props.main);
-  }, [path, btns, props.data, props.main]);
+    locationNav(path, props.dataNavList, props.main);
+  }, [path, btns, props.dataNavList, props.main]);
 
   return (
     <header className={"main_header" + (props.main ? " origin_header" : " factory_header")}>

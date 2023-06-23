@@ -1,0 +1,37 @@
+[
+    {
+        "path": "/",
+        "className": "home_nav",
+        "name": "Home"
+    },
+    {
+        "path": "/wiki",
+        "className": "wiki_nav",
+        "name": "Wiki"
+    },
+    {
+        "path": "/user/profile",
+        "className": "profile_nav",
+        "name": "Profile"
+    },
+    {
+        "path": "/logout",
+        "className": "logout_nav",
+        "name": "Logout"
+    },
+    {
+        "path": "/user/login",
+        "className": "login_nav",
+        "name": "Login"
+    },
+    {
+        "path": "/user/register",
+        "className": "register_nav",
+        "name": "Register"
+    },
+    {
+        "path": "/svgtojson",
+        "className": "not_a_classname",
+        "name": "SVGtoJSON"
+    }
+]

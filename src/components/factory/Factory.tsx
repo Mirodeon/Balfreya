@@ -23,7 +23,8 @@ const Factory = (props: FactoryProps) => {
             responsive={props.responsive}
             main={false}
             title={data.title}
-            data={data.nav}
+            dataNav={data.nav}
+            dataNavList={data.navList}
           />
           <RoutesLayout data={data.layout} />
         </>

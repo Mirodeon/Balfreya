@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { Responsive } from "../type/type";
 
-const useResponsive = (): Responsive => {
+type UseResponsiveProps = {
+  breakWidth: number;
+  breakHeight: number;
+}
+
+const useResponsive = (props: UseResponsiveProps): Responsive => {
   const [width, setWidth] = useState<number>(1024);
   const [height, setHeight] = useState<number>(768);
   const [page, setPage] = useState<HTMLElement | null>(null);
@@ -22,8 +27,8 @@ const useResponsive = (): Responsive => {
   }, []);
 
   return {
-    width: width > 768,
-    height: height > 600,
+    width: width > props.breakWidth,
+    height: height > props.breakHeight,
   };
 };
 

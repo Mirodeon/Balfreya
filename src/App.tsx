@@ -7,12 +7,14 @@ import Header from "./components/header/Header";
 import { Logout, SvgToJSON, UserHub } from "./pages";
 import Slide from "./components/slider/Slide";
 import { data as dataImg } from "./img";
-import { Factory } from "./components/factory";
+import { Factory, LayoutContainer, LayoutGrid } from "./components/factory";
 import dataNav from "./components/header/nav.json";
-import Chip from "./components/menu/Chip";
+import dataNavList from "./components/header/navList.json"
+import ChipMenu from "./components/menu/ChipMenu";
+import Footer from "./components/footer/Footer";
 
 function App() {
-  const responsive = useResponsive();
+  const responsive = useResponsive({ breakWidth: 768, breakHeight: 600 });
 
   return (
     <Provider store={store}>
@@ -22,9 +24,14 @@ function App() {
             responsive={responsive}
             main={true}
             title={"Balfreya"}
-            data={dataNav}
+            dataNav={dataNav}
+            dataNavList={dataNavList}
           />
-          <Chip responsive={responsive} data={dataNav} />
+          <ChipMenu
+            responsive={responsive}
+            dataNav={dataNav}
+            dataNavList={dataNavList}
+          />
           <Routes>
             <Route path="/user/*" element={<UserHub />} />
             <Route path="/logout" element={<Logout />} />
@@ -32,19 +39,21 @@ function App() {
             <Route
               path="/"
               element={
-                <Slide
-                  data={dataImg}
-                  width={"80%"}
-                  height={"calc(70vh - 112px)"}
-                  id={0}
-                  cssStyle={
-                    "position: absolute; top: calc(50% + 28px); left: 50%; transform: translate(-50%, -50%);"
-                  }
-                />
+                <LayoutContainer>
+                  <LayoutGrid gridTemplateAreas={""} title={"Balfreya - Slide"}>
+                    <Slide
+                      data={dataImg}
+                      width={"100%"}
+                      height={"100%"}
+                      id={0}
+                    />
+                  </LayoutGrid>
+                </LayoutContainer>
               }
             />
             <Route path="*" element={<Factory responsive={responsive} />} />
           </Routes>
+          <Footer />
         </Router>
       </PersistGate>
     </Provider>

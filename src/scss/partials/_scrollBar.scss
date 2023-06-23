@@ -1,0 +1,25 @@
+@mixin scrollBar {
+    &::-webkit-scrollbar {
+        display: block;
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: radial-gradient(var(--tertiary), var(--secondary));
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: radial-gradient(var(--primary-light), var(--secondary));
+        border-right: none;
+        border-left: none;
+        border-radius: 0.25rem;
+    }
+
+    /* &::-webkit-scrollbar-track-piece:end {
+        margin-bottom: 20px;
+    }
+
+    &::-webkit-scrollbar-track-piece:start {
+        margin-top: 20px;
+    } */
+}

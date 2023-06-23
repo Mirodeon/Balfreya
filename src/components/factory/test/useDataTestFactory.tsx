@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetcher } from "../../../utils/axios";
-import { DataFactory, DataLayout, DataNav, DataStyles } from "../../../type/type";
+import { DataFactory, DataLayout, DataNav, DataNavList, DataStyles } from "../../../type/type";
 
 const useDataTestfactory = (): DataFactory | null => {
     const [dataNav, setDataNav] = useState<DataNav[] | null>(null);
+    const [dataNavList, setDataNavList] = useState<DataNavList[] | null>(null);
     const [dataStyle, setDataStyle] = useState<DataStyles | null>(null);
     const [dataLayout, setDataLayout] = useState<DataLayout[] | null>(null);
     const [dataTitle, setDataTitle] = useState<string | null>(null);
@@ -12,6 +13,12 @@ const useDataTestfactory = (): DataFactory | null => {
         fetcher("/test/testNav.json").then((res) => {
             if (res) {
                 setDataNav(res);
+            }
+            //console.log(res);
+        })
+        fetcher("/test/testNavList.json").then((res) => {
+            if (res) {
+                setDataNavList(res);
             }
             //console.log(res);
         })
@@ -36,8 +43,8 @@ const useDataTestfactory = (): DataFactory | null => {
         // eslint-disable-next-line
     }, []);
 
-    return dataNav && dataStyle && dataLayout && dataTitle ?
-        { nav: dataNav, styles: dataStyle, layout: dataLayout, title: dataTitle }
+    return dataNav && dataNavList && dataStyle && dataLayout && dataTitle ?
+        { nav: dataNav, navList: dataNavList, styles: dataStyle, layout: dataLayout, title: dataTitle }
         : null;
 }
 

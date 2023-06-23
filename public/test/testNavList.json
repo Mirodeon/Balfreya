@@ -1,0 +1,22 @@
+[
+    {
+        "path": "/factory",
+        "className": "factory_nav",
+        "name": "Home"
+    },
+    {
+        "path": "/factory/pouet",
+        "className": "pouet_nav",
+        "name": "Pouet"
+    },
+    {
+        "path": "/factory/yo",
+        "className": "profile_nav",
+        "name": "Yo"
+    },
+    {
+        "path": "/factory/giga",
+        "className": "giga_nav",
+        "name": "Giga"
+    }
+]

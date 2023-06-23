@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
 import { useState } from "react";
 import useTimeOut from "../../utils/useTimeOut";
 import { addClassName, removeClassName } from "../../utils/addClassName";
