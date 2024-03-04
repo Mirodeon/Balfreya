@@ -8,6 +8,20 @@
 @import "./layout/layout";
 @import "./menu/menu";
 
+@font-face {
+font-family: 'XoloniumRegular';
+font-style: normal;
+font-weight: normal;
+src: local('Xolonium Regular'), url('Xolonium-Regular.woff') format('woff');
+}
+    
+@font-face {
+font-family: 'Xolonium Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Xolonium Bold'), url('Xolonium-Bold.woff') format('woff');
+}
+
 #root {
     font-family: 'XoloniumRegular';
 }
