@@ -9,7 +9,7 @@
 @import "./menu/menu";
 
 @font-face {
-font-family: 'XoloniumRegular';
+font-family: 'Xolonium Regular';
 font-style: normal;
 font-weight: normal;
 src: local('Xolonium Regular'), url('Xolonium-Regular.woff') format('woff');
@@ -23,7 +23,7 @@ src: local('Xolonium Bold'), url('Xolonium-Bold.woff') format('woff');
 }
 
 #root {
-    font-family: 'XoloniumRegular';
+    font-family: 'Xolonium Regular';
 }
 
 a {
@@ -38,7 +38,7 @@ body {
 
 button {
     background: initial;
-    font-family: 'XoloniumRegular';
+    font-family: 'Xolonium Regular';
     border: none;
 }
 
